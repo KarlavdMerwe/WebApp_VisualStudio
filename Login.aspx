@@ -32,10 +32,10 @@
                     minlength="8"
                 />
             </form>
-            <a id="btnLogin" class="btn" href="/home.html">Login</a><br/>
+            <a id="btnLogin" class="btn" href="Homepage.aspx">Login</a><br/>
             <br/>
             <br/><h3>Not a user? Join our Kitchen Table community.</h3>
-            <a id="btnJoin" class="btn" href="/signup.html">Sign Up</a>
+            <a id="btnJoin" class="btn" href="Join.aspx">Sign Up</a>
         </div>
     </div>
     </form>
