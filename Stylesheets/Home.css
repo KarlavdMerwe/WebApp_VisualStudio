@@ -13,7 +13,7 @@ body {
     position: relative;
     background-position: 50% 50%;
     background-size: cover;
-    background-image: url('Images/grapefruit.jpg');
+    background-image:url("background.gif")
 }
 
 .overlay {

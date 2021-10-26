@@ -16,9 +16,9 @@
             <img src="Images/Kitchen_Logo.png" alt="logo" class="logo"/>
             <nav>
                 <ul>
-                    <li><a href="home.html">Home</a></li>
+                    <li><a href="Homepage.aspx">Home</a></li>
                     <li><a href="#">Explore</a></li>
-                    <li><a href="images.html">My Images</a></li>
+                    <li><a href="Images.aspx">My Images</a></li>
                     <li><a href="#">About</a></li>
                 </ul>
             </nav>
