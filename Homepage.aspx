@@ -24,13 +24,7 @@
             </nav>
         </div>
     </header>
-    <div class="big-image">
-        <div class="overlay">
-            <h1>Happiness is Homemade</h1>
-            <p>Here at kitchen table we strive to inspire you</p><br/>
-            <a id="btnExplore" class="btn" href="#">Explore ideas</a>
-        </div>
-    </div>
+    <img src="Images/backgroundHome.gif" alt="background" class="big-image"/>
     </form>
 </body>
 </html>

@@ -68,8 +68,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images.aspx" />
-    <Content Include="Images\background.gif" />
     <Content Include="Homepage.aspx" />
+    <Content Include="Images\backgroundHome.gif" />
     <Content Include="Images\Kitchen_Logo.png" />
     <Content Include="Login.aspx" />
     <Content Include="Share.aspx" />
