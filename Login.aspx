@@ -10,7 +10,11 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="container">
+        <div id="Login" class="flex-center flex-column">
+            <asp:Login ID="Login1" runat="server" OnAuthenticate="ValidateUser"></asp:Login>
+        </div>
+        
+        <%--<div class="container">
         <div id="login" class="flex-center flex-column">
             <h1>Login</h1>
             <form>
@@ -37,7 +41,7 @@
             <br/><h3>Not a user? Join our Kitchen Table community.</h3>
             <a id="btnJoin" class="btn" href="Join.aspx">Sign Up</a>
         </div>
-    </div>
+    </div>--%>
     </form>
 </body>
 </html>
