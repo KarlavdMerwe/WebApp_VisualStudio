@@ -9,39 +9,30 @@
     <title>Login</title>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div id="Login" class="flex-center flex-column">
-            <asp:Login ID="Login1" runat="server" OnAuthenticate="ValidateUser"></asp:Login>
-        </div>
-        
-        <%--<div class="container">
+    <form>
+        <div class="container">
         <div id="login" class="flex-center flex-column">
             <h1>Login</h1>
-            <form>
-                <label for="username">Username :</label>
-                <input
+            <form id="form1" runat="server">
+                <label for="username">Username :</label>&nbsp;
+                <asp:TextBox ID="txtUsername" runat="server"
                     type="text"
                     name="username"
-                    id="username"
-                    placeholder="username"
-                />
-            </form>
-            <form>
-                <label for="password">Password :</label>
-                <input
+                    placeholder="username"></asp:TextBox>
+                <label for="password">Password :</label>&nbsp;
+                <asp:TextBox ID="txtPassword" runat="server"
                     type="password"
                     name="password"
-                    id="password"
                     placeholder="password"
-                    minlength="8"
-                />
-            </form>
-            <a id="btnLogin" class="btn" href="Homepage.aspx">Login</a><br/>
+                    minlength="8"></asp:TextBox>
+        <asp:Button id="btnLogin" class="btn" href="Homepage.aspx" Text="Login" runat="server" OnClick="btnLogin_Click"></asp:Button><br/>
+    </form>
+            
             <br/>
             <br/><h3>Not a user? Join our Kitchen Table community.</h3>
             <a id="btnJoin" class="btn" href="Join.aspx">Sign Up</a>
         </div>
-    </div>--%>
+    </div>
     </form>
 </body>
 </html>
