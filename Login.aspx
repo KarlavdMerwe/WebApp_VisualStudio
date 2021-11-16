@@ -26,6 +26,7 @@
                     placeholder="password"
                     minlength="8"></asp:TextBox>
         <asp:Button id="btnLogin" class="btn" href="Homepage.aspx" Text="Login" runat="server" OnClick="btnLogin_Click"></asp:Button><br/>
+        <asp:Label ID="lbIncorrect" runat="server" Text="Incorrect User Credentials" Visible="False" Font-Bold="True" Font-Size="Larger"></asp:Label>
     </form>
             
             <br/>
