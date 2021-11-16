@@ -94,6 +94,7 @@
     <Content Include="Images\Kitchen_Logo.png" />
     <Content Include="Login.aspx" />
     <Content Include="Share.aspx" />
+    <Content Include="Stylesheets\Share.css" />
     <Content Include="SignUp.aspx" />
     <Content Include="Stylesheets\Home.css" />
     <Content Include="Stylesheets\Images.css" />
