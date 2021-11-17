@@ -100,6 +100,8 @@
     <Content Include="Stylesheets\Images.css" />
     <Content Include="Stylesheets\Login.css" />
     <Content Include="Stylesheets\Navbar.css" />
+    <Content Include="Stylesheets\Upload.css" />
+    <Content Include="UploadFile.js" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>

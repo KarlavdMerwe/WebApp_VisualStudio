@@ -17,6 +17,7 @@ h1 {
     color: #f78d70;
     margin-bottom: 5rem;
     margin-left: 5rem;
+    text-align: center;
 }
 
     h1 > span {
@@ -45,10 +46,27 @@ label {
 }
 
 /* UTILITIES */
+.containerInfo {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+    .containerInfo > * {
+        width: 100%;
+    }
 
 .flex-column {
     display: flex;
     flex-direction: column;
+    flex: 50%;
+    padding: 10px;
+    height: 300px;
 }
 
 .flex-center {
@@ -56,13 +74,8 @@ label {
     align-items: center;
 }
 
-.flex-container {
-    width: 80%;
+.flex-row {
     display: flex;
-    flex-direction: row;
-    align-content: space-around;
-    align-items: center;
-    flex-wrap: wrap;
 }
 
 /* BUTTONS */

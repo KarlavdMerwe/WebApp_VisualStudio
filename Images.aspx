@@ -26,7 +26,7 @@
     </header>
     <div class="container">
         <div id="images" class= "flex-center flex-colomn">
-            <h1>My Shared Images <asp:Button class="btnShare" ID="btnShare" runat="server" Text="Share new Image" /></h1>
+            <h1>My Shared Images <asp:Button class="btnShare" ID="btnShare" runat="server" Text="Share new Image" OnClick="btnShare_Click" /></h1>
         </div>
     </div>
     </form>
