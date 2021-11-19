@@ -93,6 +93,7 @@
     <Content Include="Images\backgroundHome.gif" />
     <Content Include="Images\Kitchen_Logo.png" />
     <Content Include="Login.aspx" />
+    <Content Include="SaveImage.js" />
     <Content Include="Share.aspx" />
     <Content Include="Stylesheets\Share.css" />
     <Content Include="SignUp.aspx" />

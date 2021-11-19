@@ -5,47 +5,50 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <link rel="stylesheet" href="Stylesheets/Share.css"/>
-    <link rel="stylesheet" href="Stylesheets/Upload.css"/>
+<%--    <link rel="stylesheet" href="Stylesheets/Upload.css"/>--%>
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet'/>
     <title>Share Image</title>
 </head>
 <body>
     <form id="form1" runat="server">
         <div class="containerInfo">
-            <div id="share" class="flex-colomn flex-row">
+            <div id="share" class="flex-colomn flex-center">
                 <h1>Add Image Details</h1>
                 <label for="caption">Your caption :</label><asp:TextBox ID="txtCaption" 
                     name="caption"
                     type="text"
                     placeholder="the most amazing..."
                     maxlength="100"
-                    runat="server" Width="250px"></asp:TextBox>
+                    runat="server" Width="250px"></asp:TextBox><br />
                 <label for="date">Date Captured :</label><asp:TextBox ID="txtDate" 
                     name="date"
                     type="date"
-                    runat="server" Width="250px"></asp:TextBox>
+                    runat="server" Width="250px"></asp:TextBox><br />
                 <label for="location">Location :</label><asp:TextBox ID="txtLocation" 
                     name="location"
                     type="text"
                     placeholder="London, UK"
                     maxlength="80"
-                    runat="server" Width="250px"></asp:TextBox>
+                    runat="server" Width="250px"></asp:TextBox><br />
                 <label for="capturedBy">Captured By :</label><asp:TextBox ID="txtCaptured" 
                     name="captured"
                     type="text"
                     placeholder="Micheal Daniels"
-                    runat="server" Width="250px"></asp:TextBox>
+                    runat="server" Width="250px"></asp:TextBox><br />
             </div>
-            <div class="drop-zone">
+<%--            <div class="drop-zone">
                 <span class="drop-zone__prompt">Drop file here or click to upload</span>
                 <input type="file" name="myFile" class="drop-zone__input"/>
-            </div>
+            </div>--%>
             <div class="containerInfo">
-                <div class="flex-row">
-                <asp:Button ID="btnUpload" class="btn" runat="server" Text="Upload Image" /><asp:Button ID="btnCancel" class="btn" runat="server" Text="Cancel" OnClick="btnCancel_Click" /> 
+                <div class="flex-colomn">
+                    <br />
+                    <asp:FileUpload ID="files" type="file" runat="server" CssClass="btn" Font-Names="Century Gothic" Width="400px" /><br />
+                    <asp:Button ID="btnUpload" class="btn" runat="server" Text="Upload Image" OnClick="btnUpload_Click" /><asp:Button ID="btnCancel" class="btn" runat="server" Text="Cancel" OnClick="btnCancel_Click" /> 
                 </div>
             </div>
         </div>
+        <div id="list"></div>
         <script src="UploadFile.js"></script>
       </form>
 </body>

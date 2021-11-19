@@ -1,71 +1,57 @@
-﻿document.querySelectorAll(".drop-zone__input").forEach((inputElement) => {
-    const dropZoneElement = inputElement.closest(".drop-zone");
+﻿var imagesObject = [];
 
-    dropZoneElement.addEventListener("click", (e) => {
-        inputElement.click();
-    });
+function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
 
-    inputElement.addEventListener("change", (e) => {
-        if (inputElement.files.length) {
-            updateThumbnail(dropZoneElement, inputElement.files[0]);
-        }
-    });
+    // Loop through the FileList and render image files as thumbnails.
+    for (var i = 0, f; f = files[i]; i++) {
 
-    dropZoneElement.addEventListener("dragover", (e) => {
-        e.preventDefault();
-        dropZoneElement.classList.add("drop-zone--over");
-    });
-
-    ["dragleave", "dragend"].forEach((type) => {
-        dropZoneElement.addEventListener(type, (e) => {
-            dropZoneElement.classList.remove("drop-zone--over");
-        });
-    });
-
-    dropZoneElement.addEventListener("drop", (e) => {
-        e.preventDefault();
-
-        if (e.dataTransfer.files.length) {
-            inputElement.files = e.dataTransfer.files;
-            updateThumbnail(dropZoneElement, e.dataTransfer.files[0]);
+        // Only process image files.
+        if (!f.type.match('image.*')) {
+            continue;
         }
 
-        dropZoneElement.classList.remove("drop-zone--over");
-    });
-});
+        var reader = new FileReader();
 
-/**
- * Updates the thumbnail on a drop zone element.
- *
- * @param {HTMLElement} dropZoneElement
- * @param {File} file
- */
-function updateThumbnail(dropZoneElement, file) {
-    let thumbnailElement = dropZoneElement.querySelector(".drop-zone__thumb");
-
-    // First time - remove the prompt
-    if (dropZoneElement.querySelector(".drop-zone__prompt")) {
-        dropZoneElement.querySelector(".drop-zone__prompt").remove();
-    }
-
-    // First time - there is no thumbnail element, so lets create it
-    if (!thumbnailElement) {
-        thumbnailElement = document.createElement("div");
-        thumbnailElement.classList.add("drop-zone__thumb");
-        dropZoneElement.appendChild(thumbnailElement);
-    }
-
-    thumbnailElement.dataset.label = file.name;
-
-    // Show thumbnail for image files
-    if (file.type.startsWith("image/")) {
-        const reader = new FileReader();
-
-        reader.readAsDataURL(file);
-        reader.onload = () => {
-            thumbnailElement.style.backgroundImage = `url('${reader.result}')`;
+        // Closure to capture the file information.
+        reader.onload = function (e) {
+            displayImgData(e.target.result)
+            addImage(e.target.result);
         };
-    } else {
-        thumbnailElement.style.backgroundImage = null;
+
+        reader.readAsDataURL(f);
     }
 }
+
+function loadFromLocalStorage() {
+    var images = JSON.parse(localStorage.getItem("images"))
+
+    if (images && images.length > 0) {
+        imagesObject = images;
+
+        displayNumberOfImgs();
+        images.forEach(displayImgData);
+    }
+}
+
+function addImage(imgData) {
+    imagesObject.push(imgData);
+    localStorage.setItem("images", JSON.stringify(imagesObject));
+}
+
+function displayImgData(imgData) {
+    var span = document.createElement('span');
+    span.innerHTML = '<img class="thumb" src="' + imgData + '"/>';
+    document.getElementById('list').insertBefore(span, null);
+}
+
+
+function deleteImages() {
+    imagesObject = [];
+    localStorage.removeItem("images");
+    document.getElementById('list').innerHTML = "";
+}
+
+document.getElementById('files').addEventListener('change', handleFileSelect, false);
+//document.getElementById('deleteImgs').addEventListener("click", deleteImages);
+loadFromLocalStorage();

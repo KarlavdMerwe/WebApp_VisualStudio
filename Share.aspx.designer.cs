@@ -60,6 +60,15 @@ namespace WebApp_31614949
         protected global::System.Web.UI.WebControls.TextBox txtCaptured;
 
         /// <summary>
+        /// files control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.FileUpload files;
+
+        /// <summary>
         /// btnUpload control.
         /// </summary>
         /// <remarks>

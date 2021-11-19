@@ -29,6 +29,24 @@
             <h1>My Shared Images <asp:Button class="btnShare" ID="btnShare" runat="server" Text="Share new Image" OnClick="btnShare_Click" /></h1>
         </div>
     </div>
+    <div class="container">
+        <div id="grid" class= "flex-center flex-colomn">
+            <asp:GridView ID="gvImages" runat="server" AutoGenerateColumns="false" OnRowDataBound="OnRowDataBound">
+            <Columns>
+                <asp:BoundField DataField="Caption" HeaderText="Caption" />
+                <asp:BoundField DataField="Date" HeaderText="Date Captured" />
+                <asp:BoundField DataField="Location" HeaderText="Location" />
+                <asp:BoundField DataField="capturedBy" HeaderText="Captured By" />
+                <asp:TemplateField HeaderText="Image">
+                <ItemTemplate>
+                    <asp:Image ID="Image1" runat="server" />
+                </ItemTemplate>
+                </asp:TemplateField>
+             </Columns>
+            </asp:GridView>
+        </div>
+    </div>
+    
     </form>
 </body>
 </html>
