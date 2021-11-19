@@ -40,9 +40,11 @@
                 <span class="drop-zone__prompt">Drop file here or click to upload</span>
                 <input type="file" name="myFile" class="drop-zone__input"/>
             </div>
+            <div class="containerInfo">
+                <div class="flex-row">
+                <asp:Button ID="btnUpload" class="btn" runat="server" Text="Upload Image" /><asp:Button ID="btnCancel" class="btn" runat="server" Text="Cancel" OnClick="btnCancel_Click" /> 
+                </div>
             </div>
-        <div class="flex-row">
-            <asp:Button ID="btnUpload" class="btn" runat="server" Text="Upload Image" /><asp:Button ID="btnCancel" class="btn" runat="server" Text="Cancel" OnClick="btnCancel_Click" /> 
         </div>
         <script src="UploadFile.js"></script>
       </form>

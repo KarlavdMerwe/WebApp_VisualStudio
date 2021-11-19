@@ -46,5 +46,10 @@ namespace WebApp_31614949
                 con.Close();
             }
         }
+
+        protected void btnSignUp_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("SignUp.aspx");
+        }
     }
 }

@@ -76,6 +76,9 @@ label {
 
 .flex-row {
     display: flex;
+    flex-direction: row;
+    flex: 50%;
+    padding: 10px
 }
 
 /* BUTTONS */

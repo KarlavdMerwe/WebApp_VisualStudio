@@ -27,13 +27,12 @@
                     minlength="8"></asp:TextBox>
         <asp:Button id="btnLogin" class="btn" href="Homepage.aspx" Text="Login" runat="server" OnClick="btnLogin_Click"></asp:Button><br/>
         <asp:Label ID="lbIncorrect" runat="server" Text="Incorrect User Credentials" Visible="False" Font-Bold="True" Font-Size="Larger"></asp:Label>
-    </form>
-            
-            <br/>
+         <br/>
             <br/><h3>Not a user? Join our Kitchen Table community.</h3>
-            <a id="btnJoin" class="btn" href="Join.aspx">Sign Up</a>
+            <asp:Button class="btn" ID="btnSignUp" runat="server" Text="Sign Up" OnClick="btnSignUp_Click" />
         </div>
-    </div>
-    </form>
+        </div>
+        </form>
+        </form> 
 </body>
 </html>
