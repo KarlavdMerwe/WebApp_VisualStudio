@@ -13,9 +13,11 @@ namespace WebApp_31614949
 {
     public partial class Images : System.Web.UI.Page
     {
+        //Initialize connection string
         string constr = ConfigurationManager.ConnectionStrings["constr"].ConnectionString;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //fill the gridview with database table elements
             if (!this.IsPostBack)
             {
                 using (SqlConnection conn = new SqlConnection(constr))
@@ -33,6 +35,7 @@ namespace WebApp_31614949
 
         protected void OnRowDataBound(object sender, GridViewRowEventArgs e)
         {
+            //Add image to data table
             if (e.Row.RowType == DataControlRowType.DataRow)
             {
                 DataRowView dr = (DataRowView)e.Row.DataItem;
@@ -76,6 +79,7 @@ namespace WebApp_31614949
 
         protected void LinkButtonDelete_Click(object sender, EventArgs e)
         {
+            //Delete database row
             SqlConnection con = new SqlConnection(constr);
 
             int rowindex = ((GridViewRow)(sender as Control).NamingContainer).RowIndex;
@@ -92,6 +96,7 @@ namespace WebApp_31614949
 
         void LoadData()
         {
+            //Reload the data
             SqlConnection con = new SqlConnection(constr);
             SqlCommand cmd = new SqlCommand("SELECT * FROM ImageData", con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -100,6 +105,37 @@ namespace WebApp_31614949
             gvImages.DataSource = dt;
             gvImages.DataBind();
 
+        }
+
+        protected void btnClear_Click(object sender, EventArgs e)
+        {
+            //Clear the contents of the textboxes
+            txtID.Text = "";
+            txtCaption.Text = "";
+            txtLocation.Text = "";
+            txtCaptured.Text = "";
+        }
+
+        protected void btnEdit_Click1(object sender, EventArgs e)
+        {
+            using (SqlConnection conn = new SqlConnection(constr))
+            {
+                //Edit and save the new data retrieved from textboxes to database
+                string sql = "UPDATE ImageData SET Caption = @Caption, Location = @Location, CapturedBy = @CapturedBy WHERE ImageID = @ImageID";
+                using (SqlCommand cmd = new SqlCommand(sql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@ImageID", txtID.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Caption", txtCaption.Text.Trim());
+                    cmd.Parameters.AddWithValue("@Location", txtLocation.Text.Trim());
+                    cmd.Parameters.AddWithValue("@CapturedBy", txtCaptured.Text.Trim());
+
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                    conn.Close();
+                }
+            }
+            //Reload the page
+            Response.Redirect(Request.RawUrl);
         }
     }
 }

@@ -42,7 +42,7 @@ body {
 }
 
 label {
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin-bottom: 0.5rem;
     font-weight: 500;
     display: inline-block;
@@ -73,6 +73,16 @@ label {
 
 .hidden {
     display: none;
+}
+
+input {
+    margin-bottom: 3rem;
+    width: 20rem;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: 0 0.1rem 1.4rem 0 #f78d70;
+    display: inline-block;
 }
 
 /* BUTTONS */
@@ -119,4 +129,45 @@ label {
         transform: translateY(-0.1rem);
         transition: transform 150ms;
     }
+
+.gvImages {
+    width: 100%;
+    border: solid 2px #DA5162;
+    min-width: 80%;
+}
+
+.header {
+    background-color: #DA5162;
+    font-family: Montserrat, sans-serif;
+    color: White;
+    border: none 0px transparent;
+    height: 25px;
+    text-align: center;
+    font-size: 16px;
+}
+
+.rows {
+    background-color: #fdf7f8;
+    font-family: Montserrat, sans-serif;
+    font-size: 14px;
+    color: #000;
+    min-height: 25px;
+    text-align: left;
+    border: none 0px transparent;
+}
+
+    .rows:hover {
+        background-color: #ffd7df;
+        font-family: Montserrat, sans-serif;
+        color: #fff;
+        text-align: left;
+    }
+
+.selectedrow {
+    background-color: #f78d70;
+    font-family: Montserrat, sans-serif;
+    color: white;
+    font-weight: bold;
+    text-align: left;
+}
 
