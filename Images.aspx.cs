@@ -141,34 +141,34 @@ namespace WebApp_31614949
         protected void LinkButtonDownload_Click1(object sender, EventArgs e)
         {
             //Download Image
-            int id = int.Parse((sender as LinkButton).CommandArgument);
-            byte[] bytes;
-            string fileName;
-            using (SqlConnection con = new SqlConnection(constr))
-            {
-                using (SqlCommand cmd = new SqlCommand())
-                {
-                    cmd.CommandText = "SELECT ImageData, Name from ImageData where ImageID=@ImageID";
-                    cmd.Parameters.AddWithValue("@ImageID", id);
-                    cmd.Connection = con;
-                    con.Open();
-                    using (SqlDataReader sdr = cmd.ExecuteReader())
-                    {
-                        sdr.Read();
-                        bytes = (byte[])sdr["ImageData"];
-                        fileName = sdr["Name"].ToString();
-                    }
-                    con.Close();
-                }
-            }
-            Response.Clear();
-            Response.Buffer = true;
-            Response.Charset = "";
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            Response.AppendHeader("Content-Disposition", "attachment; filename=" + fileName);
-            Response.BinaryWrite(bytes);
-            Response.Flush();
-            Response.End();
+            //int id = int.Parse((sender as LinkButton).CommandArgument);
+            //byte[] bytes;
+            //string fileName;
+            //using (SqlConnection con = new SqlConnection(constr))
+            //{
+            //    using (SqlCommand cmd = new SqlCommand())
+            //    {
+            //        cmd.CommandText = "SELECT ImageData, Name from ImageData where ImageID=@ImageID";
+            //        cmd.Parameters.AddWithValue("@ImageID", id);
+            //        cmd.Connection = con;
+            //        con.Open();
+            //        using (SqlDataReader sdr = cmd.ExecuteReader())
+            //        {
+            //            sdr.Read();
+            //            bytes = (byte[])sdr["ImageData"];
+            //            fileName = sdr["Name"].ToString();
+            //        }
+            //        con.Close();
+            //    }
+            //}
+            //Response.Clear();
+            //Response.Buffer = true;
+            //Response.Charset = "";
+            //Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            //Response.AppendHeader("Content-Disposition", "attachment; filename=" + fileName);
+            //Response.BinaryWrite(bytes);
+            //Response.Flush();
+            //Response.End();
         }
     }
 }

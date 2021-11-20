@@ -20,7 +20,7 @@ namespace WebApp_31614949
 
         protected void btnCancel_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Homepage.aspx");
+            Response.Redirect("Images.aspx");
         }
 
         protected void btnUpload_Click(object sender, EventArgs e)
