@@ -53,6 +53,8 @@ namespace WebApp_31614949
                 }
                 ClientScript.RegisterStartupScript(GetType(), "alert", "alert('" + message + "')", true);
             }
+
+            Response.Redirect("Login.aspx");
         }
     }
 }
